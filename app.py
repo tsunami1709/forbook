@@ -180,21 +180,17 @@ def post_food(id_book):
     dbc[session['username_login']].update_one({'_id':ObjectId(id_book)},{'$set':{'note':note_update}})
     return render_template('all_my_book.html', data=list(dbc[session['username_login']].find()))
 
-# @app.route('/tim_kiem')
-# def index__():
-#     return render_template('search.html')
+def delete_food_by_id(bookk_id):
+    db.foods.delete_one({'_id':ObjectId(food_id)})
 
-# @app.route('/tim_kiem', methods=['POST'])
-# def post_food__():
-#     name_search = request.form.get('searchs')
-#     a = convert(name_search).lower()
-#     data = []
-#     for v in get_all_book():
-#         b = convert(v['name']).lower()
-#         if a in b:
-#             data.append(v)
-#     # return data[0]['name']
-#     return render_template('all_my_search.html',data=data)
+@app.route('/delete/<bookk_id>')
+def delete_food(bookk_id):
+    # for v in foods:
+    #     if v['-id'] == food_id:
+    #         foods.remove(v)
+    dbc[session['username_login']].delete_one({'_id':ObjectId(bookk_id)})
+    return redirect("/my_book")
+
 
 @app.route('/my_book/add/<id_book_all>')
 def aidi_add(id_book_all):

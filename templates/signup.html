@@ -5,13 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">       
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <div class="el-card__body">
+
+
+<!-- 
+    <div class="bodyy">
+        <div class="login">
+            <div class="form">
+              <h2>Xin chào!</h2>
+              <form method="POST">
+              <input name="user" placeholder="Username">
+              <input name="pass" placeholder="Password">
+              <input name="pass_again" placeholder="Password_Again">
+              <input type="submit" value="Sign Up" class="submit">
+            </form>
+            </div>
+            {% if error %}
+            <p class="tieude" align="center" style="font-size:12px;"><strong>Error:</strong> {{ error }}
+          {% endif %}
+            </div>
+    </div>
+      
+       -->
+    <div class="el-card__body"></div>
         <div class="mb-6 text-center">
           <img src="https://tinyurl.com/yxhdj43y" alt="ForBook" class="logo_0ce2aea">
         </div>
-      <div class="my-4 text-center"><h2>Signup to ForBook</h2></div>
+        
+      <div class="my-4 text-center"><h2>Signup to ForBook</h2>
          <form method="POST">
          <label>Username: (viết liền không dấu)</label>
          <input name="user" autocomplete="off" autofocus="autofocus" placeholder="Username or email" class="el-input__inner" style="background: rgb(255, 255, 255) !important;"/>
@@ -19,7 +47,7 @@
          <label>Password:</label>
          <input name="pass"/>
          <br>
-         <label>Password One more time</label>
+         <label>Password One more time:</label>
          <input name="pass_again"/>
          <br>
          <input type="submit" value="Signup"/>
@@ -27,5 +55,6 @@
     {% if error %}
       <p class="error"><strong>Error:</strong> {{ error }}
     {% endif %}
+  </div>
 </body>
 </html>

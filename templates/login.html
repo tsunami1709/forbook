@@ -6,10 +6,54 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="../static/style.css">
+  <style> 
+      input[type=button], input[type=submit], input[type=reset] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 15px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+      }
+      </style>
 </head>
 <body>
-  <div class="el-card__body">
-    <div class="mb-6 text-center">
+
+    <div class="main">
+        <div class="tieudee">
+            <img src="https://tinyurl.com/yxhdj43y" alt="ForBook" style="margin-top: 10px;" width="104px" height="106px">
+          </div>
+        <p class="sign" align="center">Sign in</p>
+        <form class="form1" method="POST">
+          <input class="un " name="usernames" type="text" align="center" placeholder="Username">
+          <input class="pass" name="passwords" type="password" align="center" placeholder="Password" id="myInput">
+          <br>
+          <div class="tieude">
+              <input type="checkbox" onclick="myFunction()" align="center"/> <span style="font-size: 12px;"> Show Password </span> 
+          </div>
+          
+          <script>
+           function myFunction() {
+           var x = document.getElementById("myInput");
+           if (x.type === "password") {
+             x.type = "text";
+           } else {
+             x.type = "password";
+           }
+         }
+           </script>
+          <div class="tieude">
+              <input type="submit" value="Login" align="center"/>
+          </div>
+            {% if error %}
+            <p class="tieude" align="center" style="font-size:12px;"><strong>Error:</strong> {{ error }}
+          {% endif %}
+          </form>
+        </div>
+
+    <!-- <div class="mb-6 text-center">
       <img src="https://tinyurl.com/yxhdj43y" alt="ForBook" class="logo_0ce2aea">
     </div>
   <div class="my-4 text-center"><h2>Login to ForBook</h2></div>
@@ -33,6 +77,6 @@
  </form>
 {% if error %}
   <p class="error"><strong>Error:</strong> {{ error }}
-{% endif %}
+{% endif %} -->
 </body>
 </html>
