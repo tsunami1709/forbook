@@ -178,7 +178,7 @@ def post_food(id_book):
     dbc[session['username_login']].update_one({'_id':ObjectId(id_book)},{'$set':{'last_reading_day':last_reading_day_update}})
     dbc[session['username_login']].update_one({'_id':ObjectId(id_book)},{'$set':{'page':page_update}})
     dbc[session['username_login']].update_one({'_id':ObjectId(id_book)},{'$set':{'note':note_update}})
-    return render_template('all_my_book.html', data=glist(dbc[session['username_login']].find()))
+    return render_template('all_my_book.html', data=list(dbc[session['username_login']].find()))
 
 # @app.route('/tim_kiem')
 # def index__():
