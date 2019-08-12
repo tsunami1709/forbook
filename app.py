@@ -175,9 +175,9 @@ def post_food(id_book):
     page_update = request.form.get('pages')
     note_update= request.form.get('notes')
     # note_update_2 = note_update + db.thangnq.find({'_id':ObjectId(id_book)})['note']
-    db.thangnq.update_one({'_id':ObjectId(id_book)},{'$set':{'last_reading_day':last_reading_day_update}})
-    db.thangnq.update_one({'_id':ObjectId(id_book)},{'$set':{'page':page_update}})
-    db.thangnq.update_one({'_id':ObjectId(id_book)},{'$set':{'note':note_update}})
+    dbc[session['username_login']].update_one({'_id':ObjectId(id_book)},{'$set':{'last_reading_day':last_reading_day_update}})
+    dbc[session['username_login']].update_one({'_id':ObjectId(id_book)},{'$set':{'page':page_update}})
+    dbc[session['username_login']].update_one({'_id':ObjectId(id_book)},{'$set':{'note':note_update}})
     return render_template('all_my_book.html', data=glist(dbc[session['username_login']].find()))
 
 # @app.route('/tim_kiem')
